@@ -39,7 +39,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 12%;
+  width: 47%;
 }
 
 .button-9:disabled {
@@ -73,6 +73,13 @@
     bottom: 2px;
 	right: 10px;
 	
+}
+
+.MyCards{
 	
-	
+  
+	display: flex;
+    flex-flow: row wrap;
+	margin-left: 90px;
+  
 }

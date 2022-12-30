@@ -39,11 +39,11 @@ const Cards = ({taskObj, index, deleteTask, updateListArray}) => {
 	/* Returning a card with the name, description, and buttons to edit and delete the task. */
 	return (
 		
-			<Card style={{ "background-color" : "azure","border-color" : "blue", "margin": "10px", width: '18rem'}}>
+			<Card style={{  "background-color" : "azure","border-color" : "blue", "margin": "10px", width: '18rem'}}>
 			<CardBody>	
 				<CardTitle tag="h5"> <u>{taskObj.Name}</u></CardTitle>
 				<div className='description'>
-				  <p>{taskObj.Description} </p>
+				  <p> {taskObj.Description} </p>
 				</div>
 				
 				  

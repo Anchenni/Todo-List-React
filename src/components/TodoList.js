@@ -55,13 +55,13 @@ const TodoList = () => {
 				<h1 className='h1'>My Todo List</h1>
 				<Button className="button-9" onClick={() => setModal(true)}> Create Task </Button>
 			</div>
-			<div style = {{"margin": "30px"}}>
+			
 
-				<div class="row">
+				<div class="MyCards">
 					{taskList && taskList.map((obj, index) => <Cards taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/>)}
 				</div>
 					<CreateTask toggle = {toggle} modal = {modal}  save = {saveTask}/>
-			</div>
+			
 			
 		</div>
 		</>
