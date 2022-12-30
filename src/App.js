@@ -5,9 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
 	return (
-		<div>
+		<>
+		<div style={{"background-color":"#4169E1",}}>
 			<TodoList />
 		</div>
+		<div className='footer'>
+			
+		</div>
+		</>
 	);
 };
 

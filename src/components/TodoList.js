@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { Button} from 'reactstrap';
 import CreateTask from '../modals/CreateTask';
 import Cards from './Card';
-import { CardGroup } from 'reactstrap';
+import '../App.css'
+
 
 
 const TodoList = () => {
@@ -31,20 +32,38 @@ const TodoList = () => {
 
 	}
 
+	const deleteTask = (index) =>{
+		let tempList = taskList;
+		tempList.splice(index, 1);
+		localStorage.setItem("taskList", JSON.stringify(tempList));
+		setTaskList(tempList);
+		window.location.reload();
+	}
+
+	const updateListArray = (obj, index) => {
+        let tempList = taskList
+        tempList[index] = obj
+        localStorage.setItem("taskList", JSON.stringify(tempList))
+        setTaskList(tempList)
+        window.location.reload()
+    }
+	
 	return (
 		<>
 		<div style={{"text-align": "center"}}>
-			<div className='text-center' >
-				<h1>My Todo List</h1>
-				<Button color="primary" onClick={() => setModal(true)}> Create Task </Button>
+			<div className='header'>
+				<h1 className='h1'>My Todo List</h1>
+				<Button className="button-9" onClick={() => setModal(true)}> Create Task </Button>
 			</div>
 			<div style = {{"margin": "30px"}}>
-			<CardGroup >
-			{taskList && taskList.map((obj, index) => <Cards taskObj = {obj} index = {index}/>)}
-			</CardGroup>	
+
+				<div class="row">
+					{taskList && taskList.map((obj, index) => <Cards taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/>)}
+				</div>
+					<CreateTask toggle = {toggle} modal = {modal}  save = {saveTask}/>
 			</div>
-			<CreateTask toggle = {toggle} modal = {modal}  save = {saveTask}/>
-			</div>
+			
+		</div>
 		</>
 	)
 };
